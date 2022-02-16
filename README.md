@@ -19,4 +19,4 @@ After selecting the city, it displays information about it, the current weather 
 
 App uses OpenWeather API and OpenStreetMap API.
 
-Actualisation: There is a bug - OpenStreetMap API key doesn't work anymore.
+Update: There is a bug - OpenStreetMap API key doesn't work anymore.
