@@ -1,5 +1,5 @@
 # info-app
-Group project "Info-App" at JavaScript course (2019) author: Gosia, Maria, Gabby
+Weather app with API "Info-App" - group project at JavaScript course (2019)  author: Gosia, Maria, Gabby
 
 https://margareta75.github.io/info-app/
 
@@ -19,3 +19,4 @@ After selecting the city, it displays information about it, the current weather 
 
 App uses OpenWeather API and OpenStreetMap API.
 
+Actualisation: There is a bug - OpenStreetMap API key doesn't work anymore.
