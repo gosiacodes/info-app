@@ -94,12 +94,15 @@ function getInfo() {
 }
 
 
-// Set up map
-map = L.map('mapid').setView([0, 0], 0);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 15,
-    id: 'mapbox.streets',
+// Set up map with Malmö, Sweden coordinates
+map = L.map('map').setView([55.583, 13.0333], 11);
+mapMarker = L.marker([55.583, 13.0333]).addTo(map);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    minZoom: 10,
+    id: 'mapbox/streets-v11',
     accessToken: 'pk.eyJ1IjoiZ3JlZW55NzMiLCJhIjoiY2szNXFhY3B4MWVoeTNobzJ0cjBrenl1biJ9.82vZeA5kvvzOlk2lFXlXlw'
 }).addTo(map);
 
