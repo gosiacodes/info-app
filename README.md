@@ -17,6 +17,6 @@ How does the application work?
 
 After selecting the city, it displays information about it, the current weather and the map.
 
-App uses OpenWeather API and OpenStreetMap API.
+App uses OpenWeather API and OpenStreetMap with Leaflet API.
 
-Update: There is a bug - OpenStreetMap API key doesn't work anymore.
+
