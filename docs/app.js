@@ -15,43 +15,18 @@ var map, mapMarker;
 // Update map vith new coordinates
 function updateMap(coordinates) {
     'use strict';
-    // console.log("updateMap", coordinates);
 
-    map.setView(coordinates, 3);
+    map.setView(coordinates, 10);
     if (mapMarker) {
-        //console.log("remove mapMarker");
         map.removeLayer(mapMarker);
     }
     mapMarker = L.marker(coordinates).addTo(map);
 
 }
 
-
-// Function that gets weather data from openweathermap
-/*function getWeather(city) {
-    'use strict';
-
-    var apiKey = "fc2cef4d05e5acca0565daf50456a1af";
-    var query = `?q=${city}&units=metric&APPID=${apiKey}`;
-    var url = `http://api.openweathermap.org/data/2.5/weather${query}`;
-
-    $.getJSON(url, showWeather);
-}*/
-
-
 // Function that sets up a weather widget using data from openweathermap.org
 function getWeather(weatherId) {
     'use strict';
-
-    // var weather = $("#openweatermap-widget-5").html();
-    // console.log(weather);
-    // $("#openweatermap-widget-5").html("");
-    
-    
-    // API call for several city IDs: 
-    // http://api.openweathermap.org/data/2.5/group?id=2643743,2988507,2618425,2673730&units=metric
-    
-    // window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
     window.myWidgetParam = [{
         id: 5,
         cityid: weatherId,
@@ -74,7 +49,6 @@ function getWeather(weatherId) {
     weatherId = null;
     document.getElementById("openweathermap-widget-5").innerHTML = null;
 
-    // cityid: weatherId - must refresh and update with new data next time when button "search" is clicked
 }
 
 
@@ -101,20 +75,9 @@ mapMarker = L.marker([55.583, 13.0333]).addTo(map);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
-    minZoom: 10,
     id: 'mapbox/streets-v11',
     accessToken: 'pk.eyJ1IjoiZ3JlZW55NzMiLCJhIjoiY2szNXFhY3B4MWVoeTNobzJ0cjBrenl1biJ9.82vZeA5kvvzOlk2lFXlXlw'
 }).addTo(map);
 
 // Add event listener to search button
 $("#search-button").click(getInfo);
-
-// function which clear weatherId
-/*function clearCityId(weatherId) {
-    'use strict';
-    weatherId = null;
-    document.getElementById("openweathermap-widget-5").innerHTML = null;
-}
-
-// Add event listener to clear button
-$("#clear-city").click(clearCityId);*/
