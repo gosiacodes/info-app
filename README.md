@@ -1,22 +1,21 @@
-# info-app
-Weather app with API "Info-App" - group project at JavaScript course (2019)  author: Gosia, Maria, Gabby
+# :sparkles: Info app :sparkles:
+
+Weather app with API "Info-App" - group project at JavaScript course (2019)  
 
 https://margareta75.github.io/info-app/
 
-jQuery was used to compare the way of programming with and without it.
+## :pushpin: _Contributors_
+- [@Gosia](https://github.com/margareta75)
+- [@Maria](https://github.com/monstermaria)
+- [@Gabby](https://github.com/greenangel73)
 
 
-To run the app, you need to have node.js installed.
+## :pushpin: _How does the application work?_
 
-Before you run the app the first time, run npm install in the command window. Then run node server.js
-
-The server runs on port 3000. Open localhost:3000 in the browser, and enjoy the info app! :)
-
-
-How does the application work?
-
-After selecting the city, it displays information about it, the current weather and the map.
+After selecting the city, it displays information about the city, the current weather and the map.
 
 App uses OpenWeather API and OpenStreetMap with Leaflet API.
+
+jQuery was used to compare the way of programming with and without it.
 
 
