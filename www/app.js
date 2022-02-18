@@ -28,11 +28,11 @@ function updateMap(coordinates) {
 function getWeather(weatherId) {
     'use strict';
     window.myWidgetParam = [{
-        id: 5,
+        id: 15,
         cityid: weatherId,
         appid: 'fc2cef4d05e5acca0565daf50456a1af',
         units: 'metric',
-        containerid: 'openweathermap-widget-5'
+        containerid: 'openweathermap-widget-15'
     }];
 
     console.log(window.myWidgetParam);
@@ -47,7 +47,7 @@ function getWeather(weatherId) {
     })();
     
     weatherId = null;
-    document.getElementById("openweathermap-widget-5").innerHTML = null;
+    document.getElementById("openweathermap-widget-15").innerHTML = null;
 
 }
 
@@ -58,6 +58,7 @@ function getInfo() {
     'use strict';
 
     var city = $("#city").val();
+    $("#info").removeAttr("style");
 
     $.getJSON("info.json", function (data) {
         var cityData = data[city];
