@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8">
-	<meta name="description" content="Info-app">
-	<meta name="author" content="Grit Angels">
-	<title>Info-app</title>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Info-app" />
+    <meta name="author" content="Grit Angels" />
+    <title>Info-app</title>
 
-	<link href="style.css" rel="stylesheet">   
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-	<script src="app.js" defer></script>	
-	<script src="jquery-3.4.1.js"></script>
-
-</head>
-<body>
-    
-	<center>
-        
-	<span>
-		<h1 class="titel">INFO APP</h1>
-		
-		<select id="city">
-            <option value="malmo">Please select</option>
-            <option value="london">London</option>
-            <option value="paris">Paris</option>
-            <option value="copenhagen">Copenhagen</option>
-            <option value="stockholm">Stockholm</option>
-        </select>
-
-		<input type="button" id="search-button" value="search">
-		<br>
-		<br>
-    </span>
-        
-        <br>
-        
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <div class="info" id="info">Welcome on Grit Angels INFO APP! <br>Choose the city and enjoy your ride!</div>
-            </div>
-            <div class="column">
-                <div class="infoWeather" id="openweathermap-widget-5"></div>
-                <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
-                    window.myWidgetParam.push({id: 5, cityid: '2692969', appid: 'fc2cef4d05e5acca0565daf50456a1af', units: 'metric', containerid: 'openweathermap-widget-5',  });
-                    (function() {var script = document.createElement('script');
-                                 script.async = true;
-                                 script.charset = "utf-8";
-                                 script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-                                 var s = document.getElementsByTagName('script')[0];
-                                 s.parentNode.insertBefore(script, s);  })();</script>
-            </div>
-            <div class="column">
-                 <div class="mapid" id="map"></div>
-            </div>
-        </div>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kalam&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="app.js" defer></script>
+    <script src="jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <!-- Title -->
+    <div class="row">
+      <h1 class="title">INFO APP</h1>
     </div>
-	
-    </center>
-	
-</body>
+    <!-- Select container -->
+    <div class="row select-city">
+      <select id="city">
+        <option value="malmo">Select city</option>
+        <option value="london">London</option>
+        <option value="paris">Paris</option>
+        <option value="copenhagen">Copenhagen</option>
+        <option value="stockholm">Stockholm</option>
+      </select>
+      <button type="submit" id="search-button" value="search">SEARCH</button>
+    </div>
+    <!-- Wrapper for main containers -->
+    <div class="wrapper">
+      <!-- Info container -->
+      <div class="column">
+        <div class="row">
+          <div class="info" id="info">
+            <p>Welcome on Grit Angels INFO APP!</p>
+            <p>Choose the city and enjoy your ride!</p>
+          </div>
+        </div>
+      </div>
+      <!-- Weather container -->
+      <div class="column">
+        <div class="row" id="openweathermap-widget-5"></div>
+        <script>
+          window.myWidgetParam
+            ? window.myWidgetParam
+            : (window.myWidgetParam = []);
+          window.myWidgetParam.push({
+            id: 5,
+            cityid: "2692969",
+            appid: "fc2cef4d05e5acca0565daf50456a1af",
+            units: "metric",
+            containerid: "openweathermap-widget-5",
+          });
+          (function () {
+            var script = document.createElement("script");
+            script.async = true;
+            script.charset = "utf-8";
+            script.src =
+              "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(script, s);
+          })();
+        </script>
+      </div>
+      <!-- Map container -->
+      <div class="column">
+        <div class="map" id="map"></div>
+      </div>
+    </div>
+    <!-- End of wrapper for main containers -->
+  </body>
 </html>
