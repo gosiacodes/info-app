@@ -2,10 +2,10 @@
 
 Weather app with API "Info-App" - group project at JavaScript course (2019)  
 
-https://margareta75.github.io/info-app/
+https://gosiacodes.github.io/info-app/
 
 ## :pushpin: _Contributors_
-- [@Gosia](https://github.com/margareta75)
+- [@Gosia](https://github.com/gosiacodes)
 - [@Maria](https://github.com/monstermaria)
 - [@Gabby](https://github.com/greenangel73)
 
